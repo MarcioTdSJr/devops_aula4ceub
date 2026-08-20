@@ -20,7 +20,10 @@ jobs:
         node-version: '20'
 
     - name: Instalar dependências do projeto
-      run: npm install
+      run: npm ci
+
+    - name: Corrigir permissão do ESLint
+    - run: chmod  +x mode_modules/.bin/eslint
 
     # ETAPA 1: ANÁLISE ESTÁTICA DE CÓDIGO (LINTER)
     - name: Executar análise estática de código (Linter)
